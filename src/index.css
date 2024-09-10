@@ -5,3 +5,45 @@
 body {
   font-family: "Cairo", sans-serif;
 }
+/* Image container for zoom effect */
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.fade-image {
+  width: 100%;
+  transition: transform 8s ease-in-out, opacity 4s ease-in-out;
+  /* Slowed down the transform transition to 8s for zoom effect */
+}
+
+/* Zoom in and zoom out effect */
+.zoom-in .fade-image {
+  transform: scale(1.1); /* Zoom in */
+}
+
+.zoom-out .fade-image {
+  transform: scale(1); /* Zoom out */
+}
+
+/* Fade in and fade out for the paragraph */
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide-paragraph {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
